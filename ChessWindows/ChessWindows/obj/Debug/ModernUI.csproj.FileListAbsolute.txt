@@ -1,0 +1,15 @@
+C:\Users\konfo\source\repos\ModernUI\ModernUI\bin\Debug\ModernUI.exe.config
+C:\Users\konfo\source\repos\ModernUI\ModernUI\bin\Debug\ModernUI.exe
+C:\Users\konfo\source\repos\ModernUI\ModernUI\bin\Debug\ModernUI.pdb
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI.csprojAssemblyReference.cache
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\MainWindow.g.cs
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\App.g.cs
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI_MarkupCompile.cache
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI_MarkupCompile.lref
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\MainWindow.baml
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI.g.resources
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI.Properties.Resources.resources
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI.csproj.GenerateResource.cache
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI.csproj.CoreCompileInputs.cache
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI.exe
+C:\Users\konfo\source\repos\ModernUI\ModernUI\obj\Debug\ModernUI.pdb

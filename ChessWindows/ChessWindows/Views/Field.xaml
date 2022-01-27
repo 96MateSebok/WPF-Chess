@@ -1,0 +1,677 @@
+﻿<Page x:Class="ModernUI.Field"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Title="Field" 
+      Width="500" Height="500"
+      MinHeight="500" MinWidth="800"
+      Background="#181735"
+      Name="FieldWindow">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="400"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Black Player"
+                   Foreground="White"
+                   FontSize="25"
+                   FontWeight="Medium"
+                   FontFamily="Fonts/#Dosis"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+        
+        <Button Grid.Column="1"
+                Grid.Row="0"
+                Content="Abandon"
+                Foreground="White"
+                FontSize="14"
+                FontWeight="Medium"
+                Margin="5"
+                Style="{StaticResource BlueButton}"
+                Template="{StaticResource MenuButtonTeplate}">
+        </Button>
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2"
+                   Text="White Player"
+                   Foreground="White"
+                   FontSize="25"
+                   FontWeight="Medium"
+                   FontFamily="Fonts/#Dosis"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+        <Button Grid.Column="1"
+                Grid.Row="2"
+                Content="Abandon"
+                Foreground="White"
+                FontSize="14"
+                FontWeight="Medium"
+                Margin="5"
+                Style="{StaticResource BlueButton}"
+                Template="{StaticResource MenuButtonTeplate}">
+        </Button>
+
+        <!--
+        <StackPanel Grid.Row="1"
+                    Grid.Column="2"
+                    Orientation="Vertical">
+            <TextBlock Background="Red"
+                       Text="Ide Írodik a Button x:Name"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       x:Name="yes"/>
+            <TextBlock Background="Yellow"
+                       Text="Ide Írodik az Image x:Name"
+                       Foreground="Black"
+                       VerticalAlignment="Center"
+                       x:Name="no"/>
+            <TextBlock Background="Pink"
+                       Text="Ide Írodik a"
+                       Foreground="Black"
+                       VerticalAlignment="Center"
+                       x:Name="lenght"/>
+
+        </StackPanel>
+        -->
+
+        <Grid Grid.Row="1"
+              Grid.Column="1"
+              Name="FieldGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--#region FirstRow-->
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="0"
+                    Grid.Column="0"         
+                    x:Name="Button70"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BR.png"
+                       x:Name="Image00"/>
+            </Button>
+
+            <Button Grid.Row="0"
+                    Grid.Column="1"
+                    x:Name="Button71"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="/Images/BH.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    x:Name="Button72"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BB.png"/>
+            </Button>
+
+            <Button Grid.Row="0"
+                    Grid.Column="3"
+                    x:Name="Button73"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BQ.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    x:Name="Button74"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BK.png"/>
+            </Button>
+
+            <Button Grid.Row="0"
+                    Grid.Column="5"
+                    x:Name="Button75"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BB.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="0"
+                    Grid.Column="6"
+                    x:Name="Button76"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BH.png"/>
+            </Button>
+
+            <Button Grid.Row="0"
+                    Grid.Column="7"
+                    x:Name="Button77"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BR.png"/>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region SecondRow-->
+            <Button Grid.Row="1"
+                    Grid.Column="0"         
+                    x:Name="Button60"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BP.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    x:Name="Button61"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="/Images/BP.png"/>
+            </Button>
+
+            <Button Grid.Row="1"
+                    Grid.Column="2"
+                    x:Name="Button62"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BP.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    x:Name="Button63"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BP.png"/>
+            </Button>
+
+            <Button Grid.Row="1"
+                    Grid.Column="4"
+                    x:Name="Button64"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BP.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="1"
+                    Grid.Column="5"
+                    x:Name="Button65"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BP.png"/>
+            </Button>
+
+            <Button Grid.Row="1"
+                    Grid.Column="6"
+                    x:Name="Button66"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BP.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="1"
+                    Grid.Column="7"
+                    x:Name="Button67"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/BP.png"/>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region ThirdRow-->
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="2"
+                    Grid.Column="0"         
+                    x:Name="Button50"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    x:Name="Button51"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    x:Name="Button52"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="2"
+                    Grid.Column="3"
+                    x:Name="Button53"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="2"
+                    Grid.Column="4"
+                    x:Name="Button54"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="2"
+                    Grid.Column="5"
+                    x:Name="Button55"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="2"
+                    Grid.Column="6"
+                    x:Name="Button56"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="2"
+                    Grid.Column="7"
+                    x:Name="Button57"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <!--#endregion-->
+
+            <!--#region ForthRow-->
+            <Button Grid.Row="3"
+                    Grid.Column="0"         
+                    x:Name="Button40"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    x:Name="Button41"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="3"
+                    Grid.Column="2"
+                    x:Name="Button42"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="3"
+                    Grid.Column="3"
+                    x:Name="Button43"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="3"
+                    Grid.Column="4"
+                    x:Name="Button44"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="3"
+                    Grid.Column="5"
+                    x:Name="Button45"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="3"
+                    Grid.Column="6"
+                    x:Name="Button46"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="3"
+                    Grid.Column="7"
+                    x:Name="Button47"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region FifthRow-->
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="4"
+                    Grid.Column="0"         
+                    x:Name="Button30"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="4"
+                    Grid.Column="1"
+                    x:Name="Button31"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    x:Name="Button32"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="4"
+                    Grid.Column="3"
+                    x:Name="Button33"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="4"
+                    Grid.Column="4"
+                    x:Name="Button34"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="4"
+                    Grid.Column="5"
+                    x:Name="Button35"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="4"
+                    Grid.Column="6"
+                    x:Name="Button36"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="4"
+                    Grid.Column="7"
+                    x:Name="Button37"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region SixthRow-->
+            <Button Grid.Row="5"
+                    Grid.Column="0"         
+                    x:Name="Button20"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    x:Name="Button21"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="5"
+                    Grid.Column="2"
+                    x:Name="Button22"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="5"
+                    Grid.Column="3"
+                    x:Name="Button23"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="5"
+                    Grid.Column="4"
+                    x:Name="Button24"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="5"
+                    Grid.Column="5"
+                    x:Name="Button25"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Grid.Row="5"
+                    Grid.Column="6"
+                    x:Name="Button26"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="5"
+                    Grid.Column="7"
+                    x:Name="Button27"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region SeventhRow-->
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="6"
+                    Grid.Column="0"         
+                    x:Name="Button10"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="/Images/WP.png"/>
+            </Button>
+
+            <Button Grid.Row="6"
+                    Grid.Column="1"
+                    x:Name="Button11"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="/Images/WP.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    x:Name="Button12"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WP.png"/>
+            </Button>
+
+            <Button Grid.Row="6"
+                    Grid.Column="3"
+                    x:Name="Button13"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WP.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="6"
+                    Grid.Column="4"
+                    x:Name="Button14"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WP.png"/>
+            </Button>
+
+            <Button Grid.Row="6"
+                    Grid.Column="5"
+                    x:Name="Button15"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WP.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="6"
+                    Grid.Column="6"
+                    x:Name="Button16"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WP.png"/>
+            </Button>
+
+            <Button Grid.Row="6"
+                    Grid.Column="7"
+                    x:Name="Button17"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WP.png"/>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region EighthRow-->
+            <Button Grid.Row="7"
+                    Grid.Column="0"         
+                    x:Name="Button00"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WR.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="7"
+                    Grid.Column="1"
+                    x:Name="Button01"
+                    Click="Try1"
+                    Style="{DynamicResource FieldButton}">
+                <Image Source="/Images/WH.png"/>
+            </Button>
+
+            <Button Grid.Row="7"
+                    Grid.Column="2"
+                    x:Name="Button02"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WB.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="7"
+                    Grid.Column="3"
+                    x:Name="Button03"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WQ.png"/>
+            </Button>
+
+            <Button Grid.Row="7"
+                    Grid.Column="4"
+                    x:Name="Button04"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WK.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="7"
+                    Grid.Column="5"
+                    x:Name="Button05"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WB.png"/>
+            </Button>
+
+            <Button Grid.Row="7"
+                    Grid.Column="6"
+                    x:Name="Button06"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WH.png"/>
+            </Button>
+
+            <Button Background="#FFEAF0CE"
+                    Grid.Row="7"
+                    Grid.Column="7"
+                    x:Name="Button07"
+                    Click="Try1"
+                    Style="{StaticResource FieldButton}">
+                <Image Source="/Images/WR.png"/>
+            </Button>
+            <!--#endregion-->
+        </Grid>
+    </Grid>
+</Page>
