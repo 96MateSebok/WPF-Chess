@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6b6fca95-f163-4879-866d-c36dc7acac9f": {
+      "ProjectGuid": "6b6fca95-f163-4879-866d-c36dc7acac9f",
+      "DisplayName": "ChessWindows",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

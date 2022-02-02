@@ -164,27 +164,34 @@ namespace ModernUI
             return false;
         }
 
-        public string isChessPiece(String Coordinate)
+        public bool IsChessPiece()
         {
-            if (int.Parse(Coordinate) < 10)
-            {
-                Coordinate = "0" + Coordinate;
-            }
+            String Coordinate = "Button";
+            Button isChessButton;
 
-            Coordinate = "Button" + Coordinate;
-            Button IsChessButton = LogicalTreeHelper.FindLogicalNode(this, Coordinate) as Button;
-
-            foreach (var child in LogicalTreeHelper.GetChildren(IsChessButton))
+            for (int i = 0; i < 9; i++)
             {
-                if (child is Image IsChessImage)
+                for(int j = 0; j < 9; j++)
                 {
-                    return IsChessImage.Source?.ToString().Remove(0, 30);
-                }
-                else
-                {
-                    return "false";
+                    Coordinate += i.ToString() + j.ToString();
+                    isChessButton = LogicalTreeHelper.FindLogicalNode(this, Coordinate) as Button;
+
+                    foreach (var child in LogicalTreeHelper.GetChildren(isChessButton))
+                    {
+                        if (child is Image IsChessImage)
+                        {
+                            IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5);
+
+                        }
+                    }
                 }
             }
+            return false;
+        }
+
+        public bool IsKing(String Coordinate, String Color)
+        {
+            return false;
         }
 
     }
