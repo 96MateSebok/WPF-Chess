@@ -183,6 +183,12 @@ namespace ModernUI
                         if (child is Image IsChessImage)
                         {
                             ImageSourceRemove = IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5);
+                            String Color = ImageSourceRemove.Remove(1);
+
+                            if (Color == "B")
+                            {
+                                Color = "W";
+                            }
 
                             if (ImageSourceRemove == "WP")
                             {
@@ -193,41 +199,30 @@ namespace ModernUI
                             }
                             else if (ImageSourceRemove == "BP")
                             {
+                                if (ChessAndCheckMate.IsChess.ChessBlackPawn(i, j, IsKing))
+                                {
 
+                                }
                             }
-                            else if (ImageSourceRemove == "WB")
+                            else if (ImageSourceRemove == "WB" || ImageSourceRemove == "BB")
                             {
 
                             }
-                            else if (ImageSourceRemove == "BB")
+                            else if (ImageSourceRemove == "WH" || ImageSourceRemove == "WH")
+                            {
+                                if (ChessAndCheckMate.IsChess.ChessHorse(i, j, Color, IsKing))
+                                {
+
+                                }
+                            }
+                            else if (ImageSourceRemove == "WR" || ImageSourceRemove == "BR")
                             {
 
                             }
-                            else if (ImageSourceRemove == "WH")
+                            else if (ImageSourceRemove == "WQ" || ImageSourceRemove == "BQ")
                             {
 
                             }
-                            else if (ImageSourceRemove == "BH")
-                            {
-
-                            }
-                            else if (ImageSourceRemove == "WR")
-                            {
-
-                            }
-                            else if (ImageSourceRemove == "BR")
-                            {
-
-                            }
-                            else if (ImageSourceRemove == "WQ")
-                            {
-
-                            }
-                            else if (ImageSourceRemove == "BQ")
-                            {
-
-                            }
-
                         }
                     }
                 }
@@ -237,7 +232,22 @@ namespace ModernUI
 
         public bool IsKing(String Coordinate, String Color)
         {
-            return false;
+            Coordinate = "Button" + Coordinate;
+            Color = "K" + Color;
+            Button isKingButton = LogicalTreeHelper.FindLogicalNode(this, Coordinate) as Button;
+
+            foreach (var child in LogicalTreeHelper.GetChildren(isKingButton))
+            {
+                if (child is Image IsChessImage)
+                {
+                    if (IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5) == Color)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
 
     }
