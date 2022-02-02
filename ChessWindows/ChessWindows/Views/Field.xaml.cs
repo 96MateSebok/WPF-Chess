@@ -166,8 +166,10 @@ namespace ModernUI
 
         public bool IsChessPiece()
         {
-            String Coordinate = "Button";
+            String Coordinate = "Button",
+                ImageSourceRemove;
             Button isChessButton;
+            List CoordinateList = new List();
 
             for (int i = 0; i < 9; i++)
             {
@@ -180,7 +182,51 @@ namespace ModernUI
                     {
                         if (child is Image IsChessImage)
                         {
-                            IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5);
+                            ImageSourceRemove = IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5);
+
+                            if (ImageSourceRemove == "WP")
+                            {
+                                if (ChessAndCheckMate.IsChess.ChessWhitePawn(i, j, IsKing))
+                                {
+
+                                }
+                            }
+                            else if (ImageSourceRemove == "BP")
+                            {
+
+                            }
+                            else if (ImageSourceRemove == "WB")
+                            {
+
+                            }
+                            else if (ImageSourceRemove == "BB")
+                            {
+
+                            }
+                            else if (ImageSourceRemove == "WH")
+                            {
+
+                            }
+                            else if (ImageSourceRemove == "BH")
+                            {
+
+                            }
+                            else if (ImageSourceRemove == "WR")
+                            {
+
+                            }
+                            else if (ImageSourceRemove == "BR")
+                            {
+
+                            }
+                            else if (ImageSourceRemove == "WQ")
+                            {
+
+                            }
+                            else if (ImageSourceRemove == "BQ")
+                            {
+
+                            }
 
                         }
                     }
