@@ -68,21 +68,29 @@ namespace ModernUI.ChessAndCheckMate
 
         public static bool ChessHorse(int x, int y, string Color,Func<String, String, bool> IsKing)
         {
-            if (x == 0) //Alsó sor
-            {
-                if (y < 2) //Bal alsó sarok
-                {
-                    return IsKing((x + 2).ToString() + (y + 1 ).ToString(), Color) ||
-                        IsKing((x + 1).ToString() + (y + 2).ToString(), Color);
-                }
-                else if (y > 5) // Jobb alsó sarok
-                {
-                    return IsKing((x - 2).ToString() + (y + 1).ToString(), Color) ||
-                        IsKing((x + 1).ToString() + (y + 2).ToString(), Color);
-                }
+            bool result = false;            
 
+            if (x > 0 && y < 5 && !result) // Balra 1, fel 2
+            {
+                result = IsKing((x - 1).ToString() + (y + 2).ToString(), Color);
             }
-            return false;
+
+            if (x < 7 && y < 5 && !result) //Jobbra 1, fel 2
+            {
+                result = IsKing((x + 1).ToString() + (y + 2).ToString(), Color);
+            }
+
+            if (x > 0 && y > 1 && !result) //Balra 1, le 2
+            {
+                result = IsKing((x - 1).ToString() + (y - 2).ToString(), Color);
+            }
+
+            if (x < 7 && y > 1 && !result) //Jobbra 1, le 2
+            {
+                result = IsKing((x + 1).ToString() + (y - 2).ToString(), Color);
+            }
+
+            return result;
         }
 
         public static bool ChessBishop(int x, int y, Func<String, String, bool> IsKing)
