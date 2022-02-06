@@ -8,8 +8,9 @@ namespace ModernUI.ChessAndCheckMate
 {
     class IsChess
     {
-        public static bool ChessWhitePawn(int x, int y, Func<String, String, bool> IsKing)
+        public static bool ChessWhitePawn(int x, int y, Func<String, String, String> IsKing)
         {
+            bool result = false;
             if (x == 7)
             {
                 return false;
@@ -20,24 +21,26 @@ namespace ModernUI.ChessAndCheckMate
                 y++;
                 x++;
 
-                return IsKing(x.ToString() + y.ToString(), "B");
+                result = IsKing(x.ToString() + y.ToString(), "B") == "BK";
             }
             else if (y == 7)
             {
                 x++;
                 y--;
 
-                return IsKing(x.ToString() + y.ToString(), "B");
+                result = IsKing(x.ToString() + y.ToString(), "B") == "BK";
             }
             else
             {
                 x++;
-                return IsKing(x.ToString() + (y + 1).ToString(), "B") || 
-                    IsKing(x.ToString() + (y - 1).ToString(), "B");
+                result = IsKing(x.ToString() + (y + 1).ToString(), "B") ? 
+                    IsKing(x.ToString() + (y - 1).ToString(), "B") : "BK";
             }
+
+            return result;
         }
 
-        public static bool ChessBlackPawn(int x, int y, Func<String, String, bool> IsKing)
+        public static bool ChessBlackPawn(int x, int y, Func<String, String, String> IsKing)
         {
             if (x == 0)
             {
@@ -66,7 +69,7 @@ namespace ModernUI.ChessAndCheckMate
             }
         }
 
-        public static bool ChessHorse(int x, int y, string Color,Func<String, String, bool> IsKing)
+        public static bool ChessHorse(int x, int y, string Color,Func<String, String, String> IsKing)
         {
             bool result = false;            
 
@@ -113,13 +116,13 @@ namespace ModernUI.ChessAndCheckMate
             return result;
         }
 
-        public static bool ChessBishop(int x, int y, Func<String, String, bool> IsKing)
+        public static bool ChessBishop(int x, int y, Func<String, String, String> IsKing)
         {
 
             return false;
         }
 
-        public static bool ChessRook(int x, int y, Func<String, String, bool> IsKing)
+        public static bool ChessRook(int x, int y, Func<String, String, String> IsKing)
         {
 
             return false;

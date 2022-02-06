@@ -230,7 +230,7 @@ namespace ModernUI
             return false;
         }
 
-        public bool IsKing(String Coordinate, String Color)
+        public string IsKing(String Coordinate, String Color)
         {
             Coordinate = "Button" + Coordinate;
             Color = "K" + Color;
@@ -242,12 +242,12 @@ namespace ModernUI
                 {
                     if (IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5) == Color)
                     {
-                        return false;
+                        return Color;
                     }
                 }
             }
 
-            return true;
+            return "null";
         }
 
     }
