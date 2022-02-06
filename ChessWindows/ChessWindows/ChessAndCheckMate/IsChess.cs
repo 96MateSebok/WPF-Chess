@@ -90,6 +90,26 @@ namespace ModernUI.ChessAndCheckMate
                 result = IsKing((x + 1).ToString() + (y - 2).ToString(), Color);
             }
 
+            if (x > 1 && y > 0) //Balra 2, le 1
+            {
+                result = IsKing((x - 2).ToString() + (y - 1).ToString(), Color);
+            }
+
+            if (x > 1 && y < 7) //Balra 2, fel 1
+            {
+                result = IsKing((x - 2).ToString() + (y + 1).ToString(), Color);
+            }
+
+            if (x < 7 && y > 1 && !result) //Jobbra 2, fel 1
+            {
+                result = IsKing((x + 2).ToString() + (y + 1).ToString(), Color);
+            }
+
+            if (x < 7 && y > 1 && !result) //Jobbra 2, le 1
+            {
+                result = IsKing((x + 2).ToString() + (y - 1).ToString(), Color);
+            }
+
             return result;
         }
 
