@@ -11,6 +11,7 @@ namespace ModernUI.ChessAndCheckMate
         public static bool ChessWhitePawn(int x, int y, Func<String, String, String> IsKing)
         {
             bool result = false;
+
             if (x == 7)
             {
                 return false;
@@ -23,18 +24,18 @@ namespace ModernUI.ChessAndCheckMate
 
                 result = IsKing(x.ToString() + y.ToString(), "B") == "BK";
             }
-            else if (y == 7)
+            else if (y == 7 && !result)
             {
                 x++;
                 y--;
 
                 result = IsKing(x.ToString() + y.ToString(), "B") == "BK";
             }
-            else
+            else if (!result)
             {
                 x++;
-                result = IsKing(x.ToString() + (y + 1).ToString(), "B") ? 
-                    IsKing(x.ToString() + (y - 1).ToString(), "B") : "BK";
+                result = IsKing(x.ToString() + (y + 1).ToString(), "B") == "BK"  ||
+                    IsKing(x.ToString() + (y - 1).ToString(), "B") == "BK";
             }
 
             return result;
@@ -42,6 +43,8 @@ namespace ModernUI.ChessAndCheckMate
 
         public static bool ChessBlackPawn(int x, int y, Func<String, String, String> IsKing)
         {
+            bool result = false;
+
             if (x == 0)
             {
                 return false;
@@ -52,21 +55,22 @@ namespace ModernUI.ChessAndCheckMate
                 y++;
                 x--;
 
-                return IsKing(x.ToString() + y.ToString(), "W");
+                result = IsKing(x.ToString() + y.ToString(), "W") == "WK";
             }
-            else if (y == 6)
+            else if (y == 6 && !result)
             {
                 x--;
                 y--;
 
-                return IsKing(x.ToString() + y.ToString(), "W");
+                result = IsKing(x.ToString() + y.ToString(), "W") == "WK";
             }
-            else
+            else if (!result)
             {
                 x--;
-                return IsKing(x.ToString() + (y + 1).ToString(), "W") ||
-                    IsKing(x.ToString() + (y - 1).ToString(), "W");
+                result = IsKing(x.ToString() + (y + 1).ToString(), "W") == "WK" ||
+                    IsKing(x.ToString() + (y - 1).ToString(), "W") == "WK";
             }
+            return result;
         }
 
         public static bool ChessHorse(int x, int y, string Color,Func<String, String, String> IsKing)
@@ -75,42 +79,42 @@ namespace ModernUI.ChessAndCheckMate
 
             if (x > 0 && y < 5 && !result) // Balra 1, fel 2
             {
-                result = IsKing((x - 1).ToString() + (y + 2).ToString(), Color);
+                result = IsKing((x - 1).ToString() + (y + 2).ToString(), Color) == "K" + Color;
             }
 
             if (x < 7 && y < 5 && !result) //Jobbra 1, fel 2
             {
-                result = IsKing((x + 1).ToString() + (y + 2).ToString(), Color);
+                result = IsKing((x + 1).ToString() + (y + 2).ToString(), Color) == "K" + Color;
             }
 
             if (x > 0 && y > 1 && !result) //Balra 1, le 2
             {
-                result = IsKing((x - 1).ToString() + (y - 2).ToString(), Color);
+                result = IsKing((x - 1).ToString() + (y - 2).ToString(), Color) == "K" + Color;
             }
 
             if (x < 7 && y > 1 && !result) //Jobbra 1, le 2
             {
-                result = IsKing((x + 1).ToString() + (y - 2).ToString(), Color);
+                result = IsKing((x + 1).ToString() + (y - 2).ToString(), Color) == "K" + Color;
             }
 
             if (x > 1 && y > 0) //Balra 2, le 1
             {
-                result = IsKing((x - 2).ToString() + (y - 1).ToString(), Color);
+                result = IsKing((x - 2).ToString() + (y - 1).ToString(), Color) == "K" + Color;
             }
 
             if (x > 1 && y < 7) //Balra 2, fel 1
             {
-                result = IsKing((x - 2).ToString() + (y + 1).ToString(), Color);
+                result = IsKing((x - 2).ToString() + (y + 1).ToString(), Color) == "K" + Color;
             }
 
             if (x < 7 && y > 1 && !result) //Jobbra 2, fel 1
             {
-                result = IsKing((x + 2).ToString() + (y + 1).ToString(), Color);
+                result = IsKing((x + 2).ToString() + (y + 1).ToString(), Color) == "K" + Color;
             }
 
             if (x < 7 && y > 1 && !result) //Jobbra 2, le 1
             {
-                result = IsKing((x + 2).ToString() + (y - 1).ToString(), Color);
+                result = IsKing((x + 2).ToString() + (y - 1).ToString(), Color) == "K" + Color;
             }
 
             return result;
@@ -118,7 +122,7 @@ namespace ModernUI.ChessAndCheckMate
 
         public static bool ChessBishop(int x, int y, Func<String, String, String> IsKing)
         {
-
+            bool result = false;
             return false;
         }
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\GitHub\WPFChess\ChessWindows\ChessWindows\obj\Debug\
+C:\GitHubProject\WPFChess\ChessWindows\ChessWindows\obj\Debug\
 ModernUI
 none
 false
 DEBUG;TRACE
-C:\GitHub\WPFChess\ChessWindows\ChessWindows\App.xaml
+C:\GitHubProject\WPFChess\ChessWindows\ChessWindows\App.xaml
 2138176297
 
-12183489738
+13-1898598880
 13-1310406943
 Views\Field.xaml;MainWindow.xaml;
 
-False
+True
 

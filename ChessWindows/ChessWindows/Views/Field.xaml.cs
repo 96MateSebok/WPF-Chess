@@ -242,7 +242,7 @@ namespace ModernUI
                 {
                     if (IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5) == Color)
                     {
-                        return Color;
+                        return IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5);
                     }
                 }
             }
