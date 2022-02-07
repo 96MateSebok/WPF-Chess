@@ -25,7 +25,7 @@ namespace ModernUI
         private Button SenderButton1 = new Button();
         private Button SenderButton2 = new Button();
         private Image SenderImage = new Image();
-        private int StartCoordinate, FinishCoordinate;
+        private int StartCoordinate, FinishCoordinate; //
 
         public Field()
         {
