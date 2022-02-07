@@ -18,7 +18,7 @@ namespace ModernUI
 {
     public partial class Field : Page
     {
-        private bool Press = true;
+        private bool FirstPress = true;
         private bool isWhite = false;
         private bool isBlackNext = false;
         private string ImageSource;
@@ -32,7 +32,7 @@ namespace ModernUI
             InitializeComponent();
         }
 
-        private void Try1(object sender, RoutedEventArgs e)
+        private void OnChessBoardClicked(object sender, RoutedEventArgs e)
         {
             Button SenderButton = sender as Button;
 
@@ -40,7 +40,7 @@ namespace ModernUI
             {
                 if (child is Image myImage)
                 {
-                    if (Press && (ImageSource = myImage.Source?.ToString()) != null)
+                    if (FirstPress && (ImageSource = myImage.Source?.ToString()) != null)
                     {
                         SenderButton1 = SenderButton;
                         StartCoordinate = int.Parse(SenderButton1.Name.Remove(0, 6));
@@ -56,11 +56,11 @@ namespace ModernUI
 
                         if (ImageSource.Remove(0, 30).Remove(1, 5) == "W" && !isBlackNext)
                         {
-                            Press = false;
+                            FirstPress = false;
                         }
                         else if (ImageSource.Remove(0, 30).Remove(1, 5) == "B" && isBlackNext)
                         {
-                            Press = false;
+                            FirstPress = false;
                         }
                         else
                         {
@@ -74,13 +74,14 @@ namespace ModernUI
                     {
                         SenderButton2 = SenderButton;
                         FinishCoordinate = int.Parse(SenderButton2.Name.Remove(0, 6));
+
                         if (WhichPiece(ImageSource.Remove(0, 30), StartCoordinate, FinishCoordinate))
                         {
                             myImage.Source = new BitmapImage(new Uri(ImageSource));
                             SenderImage.Source = null;
                             isBlackNext = !isBlackNext;
                         }
-                        Press = true;
+                        FirstPress = true;
                     }
                 }
             }
@@ -206,7 +207,10 @@ namespace ModernUI
                             }
                             else if (ImageSourceRemove == "WB" || ImageSourceRemove == "BB")
                             {
+                                if (ChessAndCheckMate.IsChess.ChessBishop(i, j, Color, IsKing))
+                                {
 
+                                }
                             }
                             else if (ImageSourceRemove == "WH" || ImageSourceRemove == "WH")
                             {
@@ -217,11 +221,18 @@ namespace ModernUI
                             }
                             else if (ImageSourceRemove == "WR" || ImageSourceRemove == "BR")
                             {
+                                if (ChessAndCheckMate.IsChess.ChessRook(i, j, Color, IsKing))
+                                {
 
+                                }
                             }
                             else if (ImageSourceRemove == "WQ" || ImageSourceRemove == "BQ")
                             {
+                                if (ChessAndCheckMate.IsChess.ChessRook(i, j, Color, IsKing) &&
+                                    ChessAndCheckMate.IsChess.ChessBishop(i, j, Color, IsKing))
+                                {
 
+                                }
                             }
                         }
                     }

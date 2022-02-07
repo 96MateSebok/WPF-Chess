@@ -116,7 +116,7 @@
                     Grid.Row="0"
                     Grid.Column="0"         
                     x:Name="Button70"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BR.png"
                        x:Name="Image00"/>
@@ -125,7 +125,7 @@
             <Button Grid.Row="0"
                     Grid.Column="1"
                     x:Name="Button71"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="/Images/BH.png"/>
             </Button>
@@ -134,7 +134,7 @@
                     Grid.Row="0"
                     Grid.Column="2"
                     x:Name="Button72"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BB.png"/>
             </Button>
@@ -142,7 +142,7 @@
             <Button Grid.Row="0"
                     Grid.Column="3"
                     x:Name="Button73"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BQ.png"/>
             </Button>
@@ -151,7 +151,7 @@
                     Grid.Row="0"
                     Grid.Column="4"
                     x:Name="Button74"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BK.png"/>
             </Button>
@@ -159,7 +159,7 @@
             <Button Grid.Row="0"
                     Grid.Column="5"
                     x:Name="Button75"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BB.png"/>
             </Button>
@@ -168,7 +168,7 @@
                     Grid.Row="0"
                     Grid.Column="6"
                     x:Name="Button76"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BH.png"/>
             </Button>
@@ -176,7 +176,7 @@
             <Button Grid.Row="0"
                     Grid.Column="7"
                     x:Name="Button77"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BR.png"/>
             </Button>
@@ -186,7 +186,7 @@
             <Button Grid.Row="1"
                     Grid.Column="0"         
                     x:Name="Button60"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BP.png"/>
             </Button>
@@ -195,7 +195,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     x:Name="Button61"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="/Images/BP.png"/>
             </Button>
@@ -203,7 +203,7 @@
             <Button Grid.Row="1"
                     Grid.Column="2"
                     x:Name="Button62"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BP.png"/>
             </Button>
@@ -212,7 +212,7 @@
                     Grid.Row="1"
                     Grid.Column="3"
                     x:Name="Button63"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BP.png"/>
             </Button>
@@ -220,7 +220,7 @@
             <Button Grid.Row="1"
                     Grid.Column="4"
                     x:Name="Button64"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BP.png"/>
             </Button>
@@ -229,7 +229,7 @@
                     Grid.Row="1"
                     Grid.Column="5"
                     x:Name="Button65"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BP.png"/>
             </Button>
@@ -237,7 +237,7 @@
             <Button Grid.Row="1"
                     Grid.Column="6"
                     x:Name="Button66"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BP.png"/>
             </Button>
@@ -246,7 +246,7 @@
                     Grid.Row="1"
                     Grid.Column="7"
                     x:Name="Button67"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/BP.png"/>
             </Button>
@@ -257,7 +257,7 @@
                     Grid.Row="2"
                     Grid.Column="0"         
                     x:Name="Button50"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -265,7 +265,7 @@
             <Button Grid.Row="2"
                     Grid.Column="1"
                     x:Name="Button51"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -274,7 +274,7 @@
                     Grid.Row="2"
                     Grid.Column="2"
                     x:Name="Button52"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -282,7 +282,7 @@
             <Button Grid.Row="2"
                     Grid.Column="3"
                     x:Name="Button53"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -291,7 +291,7 @@
                     Grid.Row="2"
                     Grid.Column="4"
                     x:Name="Button54"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -299,7 +299,7 @@
             <Button Grid.Row="2"
                     Grid.Column="5"
                     x:Name="Button55"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -308,7 +308,7 @@
                     Grid.Row="2"
                     Grid.Column="6"
                     x:Name="Button56"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -316,7 +316,7 @@
             <Button Grid.Row="2"
                     Grid.Column="7"
                     x:Name="Button57"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -327,7 +327,7 @@
             <Button Grid.Row="3"
                     Grid.Column="0"         
                     x:Name="Button40"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -336,7 +336,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     x:Name="Button41"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -344,7 +344,7 @@
             <Button Grid.Row="3"
                     Grid.Column="2"
                     x:Name="Button42"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -353,7 +353,7 @@
                     Grid.Row="3"
                     Grid.Column="3"
                     x:Name="Button43"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -361,7 +361,7 @@
             <Button Grid.Row="3"
                     Grid.Column="4"
                     x:Name="Button44"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -370,7 +370,7 @@
                     Grid.Row="3"
                     Grid.Column="5"
                     x:Name="Button45"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -378,7 +378,7 @@
             <Button Grid.Row="3"
                     Grid.Column="6"
                     x:Name="Button46"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -387,7 +387,7 @@
                     Grid.Row="3"
                     Grid.Column="7"
                     x:Name="Button47"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -398,7 +398,7 @@
                     Grid.Row="4"
                     Grid.Column="0"         
                     x:Name="Button30"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -406,7 +406,7 @@
             <Button Grid.Row="4"
                     Grid.Column="1"
                     x:Name="Button31"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -415,7 +415,7 @@
                     Grid.Row="4"
                     Grid.Column="2"
                     x:Name="Button32"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -423,7 +423,7 @@
             <Button Grid.Row="4"
                     Grid.Column="3"
                     x:Name="Button33"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -432,7 +432,7 @@
                     Grid.Row="4"
                     Grid.Column="4"
                     x:Name="Button34"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -440,7 +440,7 @@
             <Button Grid.Row="4"
                     Grid.Column="5"
                     x:Name="Button35"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -449,7 +449,7 @@
                     Grid.Row="4"
                     Grid.Column="6"
                     x:Name="Button36"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -457,7 +457,7 @@
             <Button Grid.Row="4"
                     Grid.Column="7"
                     x:Name="Button37"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -467,7 +467,7 @@
             <Button Grid.Row="5"
                     Grid.Column="0"         
                     x:Name="Button20"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -476,7 +476,7 @@
                     Grid.Row="5"
                     Grid.Column="1"
                     x:Name="Button21"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -484,7 +484,7 @@
             <Button Grid.Row="5"
                     Grid.Column="2"
                     x:Name="Button22"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -493,7 +493,7 @@
                     Grid.Row="5"
                     Grid.Column="3"
                     x:Name="Button23"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -501,7 +501,7 @@
             <Button Grid.Row="5"
                     Grid.Column="4"
                     x:Name="Button24"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -510,7 +510,7 @@
                     Grid.Row="5"
                     Grid.Column="5"
                     x:Name="Button25"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -518,7 +518,7 @@
             <Button Grid.Row="5"
                     Grid.Column="6"
                     x:Name="Button26"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -527,7 +527,7 @@
                     Grid.Row="5"
                     Grid.Column="7"
                     x:Name="Button27"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="{Binding LogoPath, TargetNullValue={x:Null}}"/>
             </Button>
@@ -538,7 +538,7 @@
                     Grid.Row="6"
                     Grid.Column="0"         
                     x:Name="Button10"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="/Images/WP.png"/>
             </Button>
@@ -546,7 +546,7 @@
             <Button Grid.Row="6"
                     Grid.Column="1"
                     x:Name="Button11"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="/Images/WP.png"/>
             </Button>
@@ -555,7 +555,7 @@
                     Grid.Row="6"
                     Grid.Column="2"
                     x:Name="Button12"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WP.png"/>
             </Button>
@@ -563,7 +563,7 @@
             <Button Grid.Row="6"
                     Grid.Column="3"
                     x:Name="Button13"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WP.png"/>
             </Button>
@@ -572,7 +572,7 @@
                     Grid.Row="6"
                     Grid.Column="4"
                     x:Name="Button14"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WP.png"/>
             </Button>
@@ -580,7 +580,7 @@
             <Button Grid.Row="6"
                     Grid.Column="5"
                     x:Name="Button15"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WP.png"/>
             </Button>
@@ -589,7 +589,7 @@
                     Grid.Row="6"
                     Grid.Column="6"
                     x:Name="Button16"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WP.png"/>
             </Button>
@@ -597,7 +597,7 @@
             <Button Grid.Row="6"
                     Grid.Column="7"
                     x:Name="Button17"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WP.png"/>
             </Button>
@@ -607,7 +607,7 @@
             <Button Grid.Row="7"
                     Grid.Column="0"         
                     x:Name="Button00"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WR.png"/>
             </Button>
@@ -616,7 +616,7 @@
                     Grid.Row="7"
                     Grid.Column="1"
                     x:Name="Button01"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{DynamicResource FieldButton}">
                 <Image Source="/Images/WH.png"/>
             </Button>
@@ -624,7 +624,7 @@
             <Button Grid.Row="7"
                     Grid.Column="2"
                     x:Name="Button02"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WB.png"/>
             </Button>
@@ -633,7 +633,7 @@
                     Grid.Row="7"
                     Grid.Column="3"
                     x:Name="Button03"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WQ.png"/>
             </Button>
@@ -641,7 +641,7 @@
             <Button Grid.Row="7"
                     Grid.Column="4"
                     x:Name="Button04"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WK.png"/>
             </Button>
@@ -650,7 +650,7 @@
                     Grid.Row="7"
                     Grid.Column="5"
                     x:Name="Button05"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WB.png"/>
             </Button>
@@ -658,7 +658,7 @@
             <Button Grid.Row="7"
                     Grid.Column="6"
                     x:Name="Button06"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WH.png"/>
             </Button>
@@ -667,7 +667,7 @@
                     Grid.Row="7"
                     Grid.Column="7"
                     x:Name="Button07"
-                    Click="Try1"
+                    Click="OnChessBoardClicked"
                     Style="{StaticResource FieldButton}">
                 <Image Source="/Images/WR.png"/>
             </Button>
