@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace ModernUI.PiecesMoves
 {
@@ -13,6 +8,7 @@ namespace ModernUI.PiecesMoves
             Func<String, bool> isOccupied, Func<String, String, bool> isEnemy)
         {
             Color = Color.Remove(1, 5);
+
             if (Start - 21 == Finish || Start + 21 == Finish ||
                Start - 19 == Finish || Start + 19 == Finish ||
                Start - 12 == Finish || Start + 12 == Finish ||

@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 
 namespace ModernUI
@@ -22,10 +13,8 @@ namespace ModernUI
         private bool isWhite = false;
         private bool isBlackNext = false;
         private string ImageSource;
-        private Button SenderButton1 = new Button();
-        private Button SenderButton2 = new Button();
         private Image SenderImage = new Image();
-        private int StartCoordinate, FinishCoordinate; //
+        private int StartCoordinate, FinishCoordinate;
 
         public Field()
         {
@@ -42,38 +31,33 @@ namespace ModernUI
                 {
                     if (FirstPress && (ImageSource = myImage.Source?.ToString()) != null)
                     {
-                        SenderButton1 = SenderButton;
-                        StartCoordinate = int.Parse(SenderButton1.Name.Remove(0, 6));
+                        StartCoordinate = int.Parse(SenderButton.Name.Remove(0, 6));
                         SenderImage = myImage;
 
-                        if (ImageSource.Remove(0, 30).Remove(1, 5) == "B" && !isWhite)
+                        if (RemoveColorFromImage(ImageSource) == "B" && !isWhite)
                         {
-                            MessageBox.Show("The WHITE start the game!");
+                            MessageBox.Show("The WHITE starts the game!");
                             break;
                         }
 
                         isWhite = true;
 
-                        if (ImageSource.Remove(0, 30).Remove(1, 5) == "W" && !isBlackNext)
+                        if (RemoveColorFromImage(ImageSource) == "W" && !isBlackNext)
                         {
                             FirstPress = false;
                         }
-                        else if (ImageSource.Remove(0, 30).Remove(1, 5) == "B" && isBlackNext)
+                        else if (RemoveColorFromImage(ImageSource) == "B" && isBlackNext)
                         {
                             FirstPress = false;
                         }
                         else
                         {
-                            MessageBox.Show("Not that color turn");
+                            MessageBox.Show("It's not that color's turn!");
                         }
-
-
-
                     }
                     else if (ImageSource != null)
                     {
-                        SenderButton2 = SenderButton;
-                        FinishCoordinate = int.Parse(SenderButton2.Name.Remove(0, 6));
+                        FinishCoordinate = int.Parse(SenderButton.Name.Remove(0, 6));
 
                         if (WhichPiece(ImageSource.Remove(0, 30), StartCoordinate, FinishCoordinate))
                         {
@@ -102,7 +86,7 @@ namespace ModernUI
                     return PiecesMoves.King.CanKingStep(ImageName, Start, Finish, IsEnemy);
                 case "BP.png":
                 case "WP.png":
-                    return PiecesMoves.Pawn.CanPawStep(ImageName, Start, Finish, IsOccupied, IsEnemy);
+                    return PiecesMoves.Pawn.CanPawnStep(ImageName, Start, Finish, IsOccupied, IsEnemy);
                 case "BQ.png":
                 case "WQ.png":
                     return PiecesMoves.Rook.CanRookStep(ImageName, Start, Finish, IsOccupied, IsEnemy) ||
@@ -144,7 +128,12 @@ namespace ModernUI
             return false;
         }
 
-        public bool IsEnemy(String Coordinate, String Color)
+        private string RemoveColorFromImage(string chessPiecesImage)
+        {
+            return chessPiecesImage.Remove(0, 30).Remove(1, 5);
+        }
+
+        public bool IsEnemy(string Coordinate, string Color)
             /* Megnézi, hogy a végponton ellenfél található e
              * ha igen, akkor TRUE a visszaküldött érték
              * ha nem, akkor FALSE */
@@ -160,7 +149,7 @@ namespace ModernUI
             foreach (var child in LogicalTreeHelper.GetChildren(IsEnemyButton))
             {
                 return child is Image IsEnemyImage &&
-                    IsEnemyImage.Source?.ToString().Remove(0, 30).Remove(1, 5) == Color;
+                    RemoveColorFromImage(IsEnemyImage.Source?.ToString()) == Color;
             }
             return false;
         }
@@ -241,7 +230,7 @@ namespace ModernUI
             return false;
         }
 
-        public string IsKing(String Coordinate, String Color)
+        public string IsKing(string Coordinate, string Color)
         {
             Coordinate = "Button" + Coordinate;
             Color = "K" + Color;
@@ -258,8 +247,7 @@ namespace ModernUI
                 }
             }
 
-            return "null";
+            return null;
         }
-
     }
 }

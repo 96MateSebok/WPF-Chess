@@ -64,29 +64,6 @@
                 Template="{StaticResource MenuButtonTeplate}">
         </Button>
 
-        <!--
-        <StackPanel Grid.Row="1"
-                    Grid.Column="2"
-                    Orientation="Vertical">
-            <TextBlock Background="Red"
-                       Text="Ide Írodik a Button x:Name"
-                       Foreground="White"
-                       VerticalAlignment="Center"
-                       x:Name="yes"/>
-            <TextBlock Background="Yellow"
-                       Text="Ide Írodik az Image x:Name"
-                       Foreground="Black"
-                       VerticalAlignment="Center"
-                       x:Name="no"/>
-            <TextBlock Background="Pink"
-                       Text="Ide Írodik a"
-                       Foreground="Black"
-                       VerticalAlignment="Center"
-                       x:Name="lenght"/>
-
-        </StackPanel>
-        -->
-
         <Grid Grid.Row="1"
               Grid.Column="1"
               Name="FieldGrid">
@@ -111,6 +88,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            
             <!--#region FirstRow-->
             <Button Background="#FFEAF0CE"
                     Grid.Row="0"

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace ModernUI.PiecesMoves
 {
@@ -29,6 +24,7 @@ namespace ModernUI.PiecesMoves
                 StartY = (Start - (Start % 10)) / 10;
                 StartX = Start % 10;
             }
+
             if (Finish > 9)
             {
                 FinishY = (Finish - (Finish % 10)) / 10;

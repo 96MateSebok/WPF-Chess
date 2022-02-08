@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ModernUI.ChessAndCheckMate
 {
@@ -127,7 +123,7 @@ namespace ModernUI.ChessAndCheckMate
 
             for (i = x + 1; i < 8; i++) // Jobb fel
             {
-                j += 1;
+                j = y + 1;
 
                 if (IsKing(i.ToString() + j.ToString(), Color) != "null")
                 {
@@ -137,7 +133,7 @@ namespace ModernUI.ChessAndCheckMate
 
             for (i = x + 1; i < 8; i++) // Jobb le
             {
-                j -= 1;
+                j = y - 1;
 
                 if (IsKing(i.ToString() + j.ToString(), Color) != "null")
                 {
@@ -147,7 +143,7 @@ namespace ModernUI.ChessAndCheckMate
 
             for (i = x - 1; i >= 0; i--) // Balra fel
             {
-                j += 1;
+                j = y + 1;
 
                 if (IsKing(i.ToString() + j.ToString(), Color) != "null")
                 {
@@ -157,7 +153,7 @@ namespace ModernUI.ChessAndCheckMate
 
             for (i = x - 1; i >= 0; i--) // Balra le
             {
-                j -= 1;
+                j = y - 1;
 
                 if (IsKing(i.ToString() + j.ToString(), Color) != "null")
                 {
@@ -198,7 +194,7 @@ namespace ModernUI.ChessAndCheckMate
                 }
             }
 
-            for (int i = y - 1; i >= 0; i--) //Balra
+            for (int i = y - 1; i >= 0; i--) // Balra
             {
                 if (IsKing(x.ToString() + i.ToString(), Color) != "null")
                 {
