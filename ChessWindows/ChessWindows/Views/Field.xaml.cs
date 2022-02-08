@@ -9,12 +9,12 @@ namespace ModernUI
 {
     public partial class Field : Page
     {
-        private bool FirstPress = true;
+        private bool firstPress = true;
         private bool isWhite = false;
         private bool isBlackNext = false;
-        private string ImageSource;
-        private Image SenderImage = new Image();
-        private int StartCoordinate, FinishCoordinate;
+        private string imageSource;
+        private Image senderImage = new Image();
+        private int startCoordinate, finishCoordinate;
 
         public Field()
         {
@@ -23,18 +23,18 @@ namespace ModernUI
 
         private void OnChessBoardClicked(object sender, RoutedEventArgs e)
         {
-            Button SenderButton = sender as Button;
+            Button senderButton = sender as Button;
 
-            foreach (var child in LogicalTreeHelper.GetChildren(SenderButton))
+            foreach (var child in LogicalTreeHelper.GetChildren(senderButton))
             {
                 if (child is Image myImage)
                 {
-                    if (FirstPress && (ImageSource = myImage.Source?.ToString()) != null)
+                    if (firstPress && (imageSource = myImage.Source?.ToString()) != null)
                     {
-                        StartCoordinate = int.Parse(SenderButton.Name.Remove(0, 6));
-                        SenderImage = myImage;
+                        startCoordinate = int.Parse(senderButton.Name.Remove(0, 6));
+                        senderImage = myImage;
 
-                        if (RemoveColorFromImage(ImageSource) == "B" && !isWhite)
+                        if (RemoveColorFromImage(imageSource) == "B" && !isWhite)
                         {
                             MessageBox.Show("The WHITE starts the game!");
                             break;
@@ -42,81 +42,81 @@ namespace ModernUI
 
                         isWhite = true;
 
-                        if (RemoveColorFromImage(ImageSource) == "W" && !isBlackNext)
+                        if (RemoveColorFromImage(imageSource) == "W" && !isBlackNext)
                         {
-                            FirstPress = false;
+                            firstPress = false;
                         }
-                        else if (RemoveColorFromImage(ImageSource) == "B" && isBlackNext)
+                        else if (RemoveColorFromImage(imageSource) == "B" && isBlackNext)
                         {
-                            FirstPress = false;
+                            firstPress = false;
                         }
                         else
                         {
                             MessageBox.Show("It's not that color's turn!");
                         }
                     }
-                    else if (ImageSource != null)
+                    else if (imageSource != null)
                     {
-                        FinishCoordinate = int.Parse(SenderButton.Name.Remove(0, 6));
+                        finishCoordinate = int.Parse(senderButton.Name.Remove(0, 6));
 
-                        if (WhichPiece(ImageSource.Remove(0, 30), StartCoordinate, FinishCoordinate))
+                        if (WhichPiece(imageSource.Remove(0, 30), startCoordinate, finishCoordinate))
                         {
-                            myImage.Source = new BitmapImage(new Uri(ImageSource));
-                            SenderImage.Source = null;
+                            myImage.Source = new BitmapImage(new Uri(imageSource));
+                            senderImage.Source = null;
                             isBlackNext = !isBlackNext;
                         }
-                        FirstPress = true;
+                        firstPress = true;
                     }
                 }
             }
         }
 
-        public bool WhichPiece(String ImageName, int Start, int Finish)
+        public bool WhichPiece(String imageName, int start, int finish)
         {
-            switch (ImageName)
+            switch (imageName)
             {
                 case "BB.png":
                 case "WB.png":
-                    return PiecesMoves.Bishop.CanBishopStep(ImageName, Start, Finish, IsOccupied, IsEnemy);
+                    return PiecesMoves.Bishop.CanBishopStep(imageName, start, finish, IsOccupied, IsEnemy);
                 case "BH.png":
                 case "WH.png":
-                    return PiecesMoves.Horse.CanHorseStep(ImageName, Start, Finish, IsOccupied, IsEnemy);
+                    return PiecesMoves.Horse.CanHorseStep(imageName, start, finish, IsOccupied, IsEnemy);
                 case "BK.png":
                 case "WK.png":
-                    return PiecesMoves.King.CanKingStep(ImageName, Start, Finish, IsEnemy);
+                    return PiecesMoves.King.CanKingStep(imageName, start, finish, IsEnemy);
                 case "BP.png":
                 case "WP.png":
-                    return PiecesMoves.Pawn.CanPawnStep(ImageName, Start, Finish, IsOccupied, IsEnemy);
+                    return PiecesMoves.Pawn.CanPawnStep(imageName, start, finish, IsOccupied, IsEnemy);
                 case "BQ.png":
                 case "WQ.png":
-                    return PiecesMoves.Rook.CanRookStep(ImageName, Start, Finish, IsOccupied, IsEnemy) ||
-                        PiecesMoves.Bishop.CanBishopStep(ImageName, Start, Finish, IsOccupied, IsEnemy);
+                    return PiecesMoves.Rook.CanRookStep(imageName, start, finish, IsOccupied, IsEnemy) ||
+                        PiecesMoves.Bishop.CanBishopStep(imageName, start, finish, IsOccupied, IsEnemy);
                 case "BR.png":
                 case "WR.png":
-                    return PiecesMoves.Rook.CanRookStep(ImageName, Start, Finish, IsOccupied, IsEnemy);
+                    return PiecesMoves.Rook.CanRookStep(imageName, start, finish, IsOccupied, IsEnemy);
                 default:
                     return false;
             }
         }
 
-        public bool IsOccupied(String Coordinate)
+        public bool IsOccupied(String coordinate)
             /* Megnézi, hogy az adott mezőn van e ütközés.
              * Ha van, akkor TRUE a visszaküldött érték, 
              * ha nincs, akkor FALSE*/
         {
-            if (int.Parse(Coordinate) < 10)
+            if (int.Parse(coordinate) < 10)
             {
-                Coordinate = "0" + Coordinate;
+                coordinate = "0" + coordinate;
             }
 
-            Coordinate = "Button" + Coordinate;
-            Button IsOccupiedButton = LogicalTreeHelper.FindLogicalNode(this, Coordinate) as Button;
+            coordinate = "Button" + coordinate;
+            Button isOccupiedButton = LogicalTreeHelper.FindLogicalNode(this, coordinate) as Button;
 
-            foreach (var child in LogicalTreeHelper.GetChildren(IsOccupiedButton))
+            foreach (var child in LogicalTreeHelper.GetChildren(isOccupiedButton))
             {
-                if (child is Image IsOccupiedImage)
+                if (child is Image isOccupiedImage)
                 {
-                    return IsOccupiedImage.Source?.ToString() != null;
+                    return isOccupiedImage.Source?.ToString() != null;
                 }
                 else
                 {
@@ -133,92 +133,92 @@ namespace ModernUI
             return chessPiecesImage.Remove(0, 30).Remove(1, 5);
         }
 
-        public bool IsEnemy(string Coordinate, string Color)
+        public bool IsEnemy(string coordinate, string color)
             /* Megnézi, hogy a végponton ellenfél található e
              * ha igen, akkor TRUE a visszaküldött érték
              * ha nem, akkor FALSE */
         {
-            if (int.Parse(Coordinate) < 10)
+            if (int.Parse(coordinate) < 10)
             {
-                Coordinate = "0" + Coordinate;
+                coordinate = "0" + coordinate;
             }
 
-            Coordinate = "Button" + Coordinate;
-            Button IsEnemyButton = LogicalTreeHelper.FindLogicalNode(this, Coordinate) as Button;
+            coordinate = "Button" + coordinate;
+            Button IsEnemyButton = LogicalTreeHelper.FindLogicalNode(this, coordinate) as Button;
 
             foreach (var child in LogicalTreeHelper.GetChildren(IsEnemyButton))
             {
                 return child is Image IsEnemyImage &&
-                    RemoveColorFromImage(IsEnemyImage.Source?.ToString()) == Color;
+                    RemoveColorFromImage(IsEnemyImage.Source?.ToString()) == color;
             }
             return false;
         }
 
         public bool IsChessPiece()
         {
-            String Coordinate = "Button",
-                ImageSourceRemove;
+            String coordinate = "Button",
+                imageSourceRemove;
             Button isChessButton;
-            List CoordinateList = new List();
+            List coordinateList = new List();
 
             for (int i = 0; i < 9; i++)
             {
                 for(int j = 0; j < 9; j++)
                 {
-                    Coordinate += i.ToString() + j.ToString();
-                    isChessButton = LogicalTreeHelper.FindLogicalNode(this, Coordinate) as Button;
+                    coordinate += i.ToString() + j.ToString();
+                    isChessButton = LogicalTreeHelper.FindLogicalNode(this, coordinate) as Button;
 
                     foreach (var child in LogicalTreeHelper.GetChildren(isChessButton))
                     {
-                        if (child is Image IsChessImage)
+                        if (child is Image isChessImage)
                         {
-                            ImageSourceRemove = IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5);
-                            String Color = ImageSourceRemove.Remove(1);
+                            imageSourceRemove = isChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5);
+                            String color = imageSourceRemove.Remove(1);
 
-                            if (Color == "B")
+                            if (color == "B")
                             {
-                                Color = "W";
+                                color = "W";
                             }
 
-                            if (ImageSourceRemove == "WP")
+                            if (imageSourceRemove == "WP")
                             {
                                 if (ChessAndCheckMate.IsChess.ChessWhitePawn(i, j, IsKing))
                                 {
 
                                 }
                             }
-                            else if (ImageSourceRemove == "BP")
+                            else if (imageSourceRemove == "BP")
                             {
                                 if (ChessAndCheckMate.IsChess.ChessBlackPawn(i, j, IsKing))
                                 {
 
                                 }
                             }
-                            else if (ImageSourceRemove == "WB" || ImageSourceRemove == "BB")
+                            else if (imageSourceRemove == "WB" || imageSourceRemove == "BB")
                             {
-                                if (ChessAndCheckMate.IsChess.ChessBishop(i, j, Color, IsKing))
+                                if (ChessAndCheckMate.IsChess.ChessBishop(i, j, color, IsKing))
                                 {
 
                                 }
                             }
-                            else if (ImageSourceRemove == "WH" || ImageSourceRemove == "WH")
+                            else if (imageSourceRemove == "WH" || imageSourceRemove == "WH")
                             {
-                                if (ChessAndCheckMate.IsChess.ChessHorse(i, j, Color, IsKing))
+                                if (ChessAndCheckMate.IsChess.ChessHorse(i, j, color, IsKing))
                                 {
 
                                 }
                             }
-                            else if (ImageSourceRemove == "WR" || ImageSourceRemove == "BR")
+                            else if (imageSourceRemove == "WR" || imageSourceRemove == "BR")
                             {
-                                if (ChessAndCheckMate.IsChess.ChessRook(i, j, Color, IsKing))
+                                if (ChessAndCheckMate.IsChess.ChessRook(i, j, color, IsKing))
                                 {
 
                                 }
                             }
-                            else if (ImageSourceRemove == "WQ" || ImageSourceRemove == "BQ")
+                            else if (imageSourceRemove == "WQ" || imageSourceRemove == "BQ")
                             {
-                                if (ChessAndCheckMate.IsChess.ChessRook(i, j, Color, IsKing) &&
-                                    ChessAndCheckMate.IsChess.ChessBishop(i, j, Color, IsKing))
+                                if (ChessAndCheckMate.IsChess.ChessRook(i, j, color, IsKing) &&
+                                    ChessAndCheckMate.IsChess.ChessBishop(i, j, color, IsKing))
                                 {
 
                                 }
@@ -230,17 +230,17 @@ namespace ModernUI
             return false;
         }
 
-        public string IsKing(string Coordinate, string Color)
+        public string IsKing(string coordinate, string color)
         {
-            Coordinate = "Button" + Coordinate;
-            Color = "K" + Color;
-            Button isKingButton = LogicalTreeHelper.FindLogicalNode(this, Coordinate) as Button;
+            coordinate = "Button" + coordinate;
+            color = "K" + color;
+            Button isKingButton = LogicalTreeHelper.FindLogicalNode(this, coordinate) as Button;
 
             foreach (var child in LogicalTreeHelper.GetChildren(isKingButton))
             {
                 if (child is Image IsChessImage)
                 {
-                    if (IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5) == Color)
+                    if (IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5) == color)
                     {
                         return IsChessImage.Source?.ToString().Remove(0, 30).Remove(2, 5);
                     }

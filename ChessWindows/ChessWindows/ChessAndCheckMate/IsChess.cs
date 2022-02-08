@@ -4,7 +4,7 @@ namespace ModernUI.ChessAndCheckMate
 {
     class IsChess
     {
-        public static bool ChessWhitePawn(int x, int y, Func<String, String, String> IsKing)
+        public static bool ChessWhitePawn(int x, int y, Func<string, string, string> IsKing)
         {
             bool result = false;
 
@@ -37,7 +37,7 @@ namespace ModernUI.ChessAndCheckMate
             return result;
         }
 
-        public static bool ChessBlackPawn(int x, int y, Func<String, String, String> IsKing)
+        public static bool ChessBlackPawn(int x, int y, Func<string, string, string> IsKing)
         {
             bool result = false;
 
@@ -69,54 +69,54 @@ namespace ModernUI.ChessAndCheckMate
             return result;
         }
 
-        public static bool ChessHorse(int x, int y, string Color,Func<String, String, String> IsKing)
+        public static bool ChessHorse(int x, int y, string color, Func<string, string, string> IsKing)
         {
             bool result = false;            
 
             if (x > 0 && y < 5 && !result) // Balra 1, fel 2
             {
-                result = IsKing((x - 1).ToString() + (y + 2).ToString(), Color) == Color + "K";
+                result = IsKing((x - 1).ToString() + (y + 2).ToString(), color) == color + "K";
             }
 
             if (x < 7 && y < 5 && !result) // Jobbra 1, fel 2
             {
-                result = IsKing((x + 1).ToString() + (y + 2).ToString(), Color) == Color + "K";
+                result = IsKing((x + 1).ToString() + (y + 2).ToString(), color) == color + "K";
             }
 
             if (x > 0 && y > 1 && !result) // Balra 1, le 2
             {
-                result = IsKing((x - 1).ToString() + (y - 2).ToString(), Color) == Color + "K";
+                result = IsKing((x - 1).ToString() + (y - 2).ToString(), color) == color + "K";
             }
 
             if (x < 7 && y > 1 && !result) // Jobbra 1, le 2
             {
-                result = IsKing((x + 1).ToString() + (y - 2).ToString(), Color) == Color + "K";
+                result = IsKing((x + 1).ToString() + (y - 2).ToString(), color) == color + "K";
             }
 
             if (x > 1 && y > 0) // Balra 2, le 1
             {
-                result = IsKing((x - 2).ToString() + (y - 1).ToString(), Color) == Color + "K";
+                result = IsKing((x - 2).ToString() + (y - 1).ToString(), color) == color + "K";
             }
 
             if (x > 1 && y < 7) // Balra 2, fel 1
             {
-                result = IsKing((x - 2).ToString() + (y + 1).ToString(), Color) == Color + "K";
+                result = IsKing((x - 2).ToString() + (y + 1).ToString(), color) == color + "K";
             }
 
             if (x < 7 && y > 1 && !result) // Jobbra 2, fel 1
             {
-                result = IsKing((x + 2).ToString() + (y + 1).ToString(), Color) == Color + "K";
+                result = IsKing((x + 2).ToString() + (y + 1).ToString(), color) == color + "K";
             }
 
             if (x < 7 && y > 1 && !result) // Jobbra 2, le 1
             {
-                result = IsKing((x + 2).ToString() + (y - 1).ToString(), Color) == Color + "K";
+                result = IsKing((x + 2).ToString() + (y - 1).ToString(), color) == color + "K";
             }
 
             return result;
         }
 
-        public static bool ChessBishop(int x, int y, string Color, Func<String, String, String> IsKing)
+        public static bool ChessBishop(int x, int y, string color, Func<string, string, string> IsKing)
         {
             bool result = false;
             int i = x, j = y;
@@ -125,9 +125,9 @@ namespace ModernUI.ChessAndCheckMate
             {
                 j = y + 1;
 
-                if (IsKing(i.ToString() + j.ToString(), Color) != "null")
+                if (IsKing(i.ToString() + j.ToString(), color) != "null")
                 {
-                    result = IsKing(i.ToString() + j.ToString(), Color) == Color + "K";
+                    result = IsKing(i.ToString() + j.ToString(), color) == color + "K";
                 }
             }
 
@@ -135,9 +135,9 @@ namespace ModernUI.ChessAndCheckMate
             {
                 j = y - 1;
 
-                if (IsKing(i.ToString() + j.ToString(), Color) != "null")
+                if (IsKing(i.ToString() + j.ToString(), color) != "null")
                 {
-                    result = IsKing(i.ToString() + j.ToString(), Color) == Color + "K";
+                    result = IsKing(i.ToString() + j.ToString(), color) == color + "K";
                 }
             }
 
@@ -145,9 +145,9 @@ namespace ModernUI.ChessAndCheckMate
             {
                 j = y + 1;
 
-                if (IsKing(i.ToString() + j.ToString(), Color) != "null")
+                if (IsKing(i.ToString() + j.ToString(), color) != "null")
                 {
-                    result = IsKing(i.ToString() + j.ToString(), Color) == Color + "K";
+                    result = IsKing(i.ToString() + j.ToString(), color) == color + "K";
                 }
             }
 
@@ -155,50 +155,50 @@ namespace ModernUI.ChessAndCheckMate
             {
                 j = y - 1;
 
-                if (IsKing(i.ToString() + j.ToString(), Color) != "null")
+                if (IsKing(i.ToString() + j.ToString(), color) != "null")
                 {
-                    result = IsKing(i.ToString() + j.ToString(), Color) == Color + "K";
+                    result = IsKing(i.ToString() + j.ToString(), color) == color + "K";
                 }
             }
 
             return result;
         }
 
-        public static bool ChessRook(int x, int y, string Color, Func<String, String, String> IsKing)
+        public static bool ChessRook(int x, int y, string color, Func<string, string, string> IsKing)
         {
             bool result = false;
 
             for (int i = x + 1; i < 8; i++) // Fel
             {
-                if (IsKing(i.ToString() + y.ToString(), Color) != "null")
+                if (IsKing(i.ToString() + y.ToString(), color) != "null")
                 {
-                    result = IsKing(i.ToString() + y.ToString(), Color) == Color + "K";
+                    result = IsKing(i.ToString() + y.ToString(), color) == color + "K";
                 }
             }
 
 
             for (int i = x - 1; i >= 0; i--) // Le
             {
-                if (IsKing(i.ToString() + y.ToString(), Color) != "null")
+                if (IsKing(i.ToString() + y.ToString(), color) != "null")
                 {
-                    result = IsKing(i.ToString() + y.ToString(), Color) == Color + "K";
+                    result = IsKing(i.ToString() + y.ToString(), color) == color + "K";
                 }
             }
 
 
             for (int i = y + 1; i < 8; i++) // Jobbra
             {
-                if (IsKing(x.ToString() + i.ToString(), Color) != "null")
+                if (IsKing(x.ToString() + i.ToString(), color) != "null")
                 {
-                    result = IsKing(x.ToString() + i.ToString(), Color) == Color + "K";
+                    result = IsKing(x.ToString() + i.ToString(), color) == color + "K";
                 }
             }
 
             for (int i = y - 1; i >= 0; i--) // Balra
             {
-                if (IsKing(x.ToString() + i.ToString(), Color) != "null")
+                if (IsKing(x.ToString() + i.ToString(), color) != "null")
                 {
-                    result = IsKing(x.ToString() + i.ToString(), Color) == Color + "K";
+                    result = IsKing(x.ToString() + i.ToString(), color) == color + "K";
                 }
             }
 

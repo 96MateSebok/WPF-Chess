@@ -4,97 +4,97 @@ namespace ModernUI.PiecesMoves
 {
     class Bishop
     {
-        public static bool CanBishopStep(String Color, int Start, int Finish,
-            Func<String, bool> isOccupied, Func<String, String, bool> isEnemy)
+        public static bool CanBishopStep(string color, int start, int finish,
+            Func<string, bool> IsOccupied, Func<string, string, bool> IsEnemy)
         {
-            Color = Color.Remove(1, 5);
-            int StartY = 0,
-                StartX = Start,
-                FinishY = 0,
-                FinishX = Finish,
-                FakeStart1 = Start,
-                FakeStart2 = Start,
-                FakeStart3 = Start,
-                FakeStart4 = Start;
+            color = color.Remove(1, 5);
+            int startY = 0,
+                startX = start,
+                finishY = 0,
+                finishX = finish,
+                fakeStart1 = start,
+                FakeStart2 = start,
+                FakeStart3 = start,
+                FakeStart4 = start;
             int OccupiedCoordinate;
             bool CanStep = false;
 
-            if (Start > 9)
+            if (start > 9)
             {
-                StartY = (Start - (Start % 10)) / 10;
-                StartX = Start % 10;
+                startY = (start - (start % 10)) / 10;
+                startX = start % 10;
             }
 
-            if (Finish > 9)
+            if (finish > 9)
             {
-                FinishY = (Finish - (Finish % 10)) / 10;
-                FinishX = Finish % 10;
+                finishY = (finish - (finish % 10)) / 10;
+                finishX = finish % 10;
             }
 
             for (int i = 0; i < 7; i++)
             {
-                FakeStart1 += 11;
+                fakeStart1 += 11;
                 FakeStart2 -= 11;
                 FakeStart3 += 9;
                 FakeStart4 -= 9;
-                if (FakeStart1 == Finish ||
-                   FakeStart2 == Finish ||
-                   FakeStart3 == Finish ||
-                   FakeStart4 == Finish)
+                if (fakeStart1 == finish ||
+                   FakeStart2 == finish ||
+                   FakeStart3 == finish ||
+                   FakeStart4 == finish)
                 {
                     CanStep = true;
                     break;
                 }
             }
 
-            if ((StartX < FinishX) && CanStep)
+            if ((startX < finishX) && CanStep)
             {
-                if (StartY < FinishY) // Jobbra fel
+                if (startY < finishY) // Jobbra fel
                 {
-                    for (OccupiedCoordinate = Start + 11; OccupiedCoordinate < Finish; OccupiedCoordinate += 11)
+                    for (OccupiedCoordinate = start + 11; OccupiedCoordinate < finish; OccupiedCoordinate += 11)
                     {
-                        if (isOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(OccupiedCoordinate.ToString()))
                         {
                             return false;
                         }
                     }
-                    return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
+                    return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
                 }
                 else // Jobbra le
                 {
-                    for (OccupiedCoordinate = Start - 9; OccupiedCoordinate > Finish; OccupiedCoordinate -= 9)
+                    for (OccupiedCoordinate = start - 9; OccupiedCoordinate > finish; OccupiedCoordinate -= 9)
                     {
-                        if (isOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(OccupiedCoordinate.ToString()))
                         {
                             return false;
                         }
                     }
-                    return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
+                    return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
                 }
             }
             else if (CanStep)
             {
-                if (StartY < FinishY) //Balra fel
+                if (startY < finishY) //Balra fel
                 {
-                    for (OccupiedCoordinate = Start + 9; OccupiedCoordinate < Finish; OccupiedCoordinate += 9)
+                    for (OccupiedCoordinate = start + 9; OccupiedCoordinate < finish; OccupiedCoordinate += 9)
                     {
-                        if (isOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(OccupiedCoordinate.ToString()))
                         {
                             return false;
                         }
                     }
-                    return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
+                    return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
                 }
                 else //Balra le
                 {
-                    for (OccupiedCoordinate = Start - 11; OccupiedCoordinate > Finish; OccupiedCoordinate -= 11)
+                    for (OccupiedCoordinate = start - 11; OccupiedCoordinate > finish; OccupiedCoordinate -= 11)
                     {
-                        if (isOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(OccupiedCoordinate.ToString()))
                         {
                             return false;
                         }
                     }
-                    return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
+                    return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
                 }
             }
             return false;

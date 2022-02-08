@@ -4,21 +4,21 @@ namespace ModernUI.PiecesMoves
 {
     class King
     {
-        public static bool CanKingStep(String Color, int Start, int Finish,
-            Func<String, String, bool> isEnemy)
+        public static bool CanKingStep(string color, int start, int finish,
+            Func<string, string, bool> IsEnemy)
         {
-            Color = Color.Remove(1, 5);
+            color = color.Remove(1, 5);
 
-            if (Start + 9 == Finish || //Balre fel
-                Start - 9 == Finish || //Jobbra le
-                Start + 11 == Finish || //Jobbra fel
-                Start - 11 == Finish || //Balra le
-                Start + 1 == Finish || //Jobbra
-                Start - 1 == Finish || // Balra
-                Start + 10 == Finish || // Fel
-                Start - 10 == Finish) //Le
+            if (start + 9 == finish || //Balre fel
+                start - 9 == finish || //Jobbra le
+                start + 11 == finish || //Jobbra fel
+                start - 11 == finish || //Balra le
+                start + 1 == finish || //Jobbra
+                start - 1 == finish || // Balra
+                start + 10 == finish || // Fel
+                start - 10 == finish) //Le
             {
-                return !isEnemy(Finish.ToString(), Color);
+                return !IsEnemy(finish.ToString(), color);
             }
 
             return false;

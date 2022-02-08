@@ -4,62 +4,63 @@ namespace ModernUI.PiecesMoves
 {
     class Rook
     {
-        public static bool CanRookStep(String Color, int Start, int Finish,
-            Func<String, bool> isOccupied, Func<String, String, bool> isEnemy)
+        public static bool CanRookStep(string color, int start, int finish,
+            Func<string, bool> IsOccupied, Func<string, string, bool> IsEnemy)
         {
-            Color = Color.Remove(1, 5);
-            int OccupiedCoordinate;
+            color = color.Remove(1, 5);
+            int occupiedCoordinate;
 
-            if (Start < Finish)
+            if (start < finish)
             {
-                if (Start / 10 == Finish / 10 || Start == Finish / 10)
+                if (start / 10 == finish / 10 || start == finish / 10)
                 {
-                    for (OccupiedCoordinate = Start + 1; OccupiedCoordinate < Finish; OccupiedCoordinate++)
+                    for (occupiedCoordinate = start + 1; occupiedCoordinate < finish; occupiedCoordinate++)
                     {
-                        if (isOccupied(OccupiedCoordinate.ToString()))
-                        {
-                            return false;
-                        }
-                    }
-                    return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
-                }
-                else if (Start % 10 == Finish % 10)
-                {
-                    for (OccupiedCoordinate = Start + 10; OccupiedCoordinate < Finish; OccupiedCoordinate += 10)
-                    {
-                        if (isOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(occupiedCoordinate.ToString()))
                         {
                             return false;
                         }
                     }
 
-                    return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
+                    return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
+                }
+                else if (start % 10 == finish % 10)
+                {
+                    for (occupiedCoordinate = start + 10; occupiedCoordinate < finish; occupiedCoordinate += 10)
+                    {
+                        if (IsOccupied(occupiedCoordinate.ToString()))
+                        {
+                            return false;
+                        }
+                    }
+
+                    return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
                 }
             }
             else
             {
-                if (Start / 10 == Finish / 10 || Start == Finish / 10)
+                if (start / 10 == finish / 10 || start == finish / 10)
                 {
-                    for (OccupiedCoordinate = Start - 1; OccupiedCoordinate > Finish; OccupiedCoordinate--)
+                    for (occupiedCoordinate = start - 1; occupiedCoordinate > finish; occupiedCoordinate--)
                     {
-                        if (isOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(occupiedCoordinate.ToString()))
                         {
                             return false;
                         }
                     }
-                    return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
+                    return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
                 }
-                else if (Start % 10 == Finish % 10)
+                else if (start % 10 == finish % 10)
                 {
-                    for (OccupiedCoordinate = Start - 10; OccupiedCoordinate > Finish; OccupiedCoordinate -= 10)
+                    for (occupiedCoordinate = start - 10; occupiedCoordinate > finish; occupiedCoordinate -= 10)
                     {
-                        if (isOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(occupiedCoordinate.ToString()))
                         {
                             return false;
                         }
                     }
 
-                    return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
+                    return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
                 }
             }
             return false;
