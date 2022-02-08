@@ -4,43 +4,44 @@ namespace ModernUI.PiecesMoves
 {
     class Pawn
     {
-        public static bool CanPawnStep(string Color, int start, int finish, 
-            Func<string, bool> isOccupied, Func<string, string, bool> isEnemy)
+        public static bool CanPawnStep(string color, int start, int finish, 
+            Func<string, bool> IsOccupied, Func<string, string, bool> IsEnemy)
         {
-            Color = Color.Remove(1, 5);
-            return Color == "B" ? Black(start, finish, isOccupied, isEnemy) : White(start, finish, isOccupied, isEnemy);
+            color = color.Remove(1, 5);
+            return color == "B" ? Black(start, finish, IsOccupied, IsEnemy) 
+                : White(start, finish, IsOccupied, IsEnemy);
         }
 
         public static bool White(int start, int finish, 
             Func<string, bool> isOccupied, Func<string, string, bool> isEnemy)
         {
-            int OccupiedCoordinate;
+            int occupiedCoordinate;
 
             if (start < 19 && start - finish == -20 && start != finish) // Kezdésnél 2-t lép előre
             {
-                OccupiedCoordinate = start + 10;
-                if (isOccupied(OccupiedCoordinate.ToString()))
+                occupiedCoordinate = start + 10;
+                if (isOccupied(occupiedCoordinate.ToString()))
                 {
                     return false;
                 }
 
-                OccupiedCoordinate += 10;
-                return !isOccupied(OccupiedCoordinate.ToString());
+                occupiedCoordinate += 10;
+                return !isOccupied(occupiedCoordinate.ToString());
             }
             else if (start + 10 == finish) // Egyet lép előre
             {
-                OccupiedCoordinate = start + 10;
-                return !isOccupied(OccupiedCoordinate.ToString());
+                occupiedCoordinate = start + 10;
+                return !isOccupied(occupiedCoordinate.ToString());
             }
             else if (start - finish == -9) // Balra támad
             {
-                OccupiedCoordinate = start + 9;
-                return isEnemy(OccupiedCoordinate.ToString(), "B");
+                occupiedCoordinate = start + 9;
+                return isEnemy(occupiedCoordinate.ToString(), "B");
             }
             else if (start - finish == -11) // Jobbra támad
             {
-                OccupiedCoordinate = start + 11;
-                return isEnemy(OccupiedCoordinate.ToString(), "B");
+                occupiedCoordinate = start + 11;
+                return isEnemy(occupiedCoordinate.ToString(), "B");
             }
             else
             {
@@ -49,34 +50,34 @@ namespace ModernUI.PiecesMoves
         }
 
         public static bool Black(int start, int finish,
-            Func<String, bool> isOccupied, Func<String, String, bool> isEnemy)
+            Func<string, bool> IsOccupied, Func<string, string, bool> IsEnemy)
         {
-            int OccupiedCoordinate;
+            int occupiedCoordinate;
 
             if (start > 59 && start - finish == 20 && start != finish) // Kezdésnél 2-t lép előre
             {
-                OccupiedCoordinate = start - 10;
-                if (isOccupied(OccupiedCoordinate.ToString()))
+                occupiedCoordinate = start - 10;
+                if (IsOccupied(occupiedCoordinate.ToString()))
                 {
                     return false;
                 }
-                OccupiedCoordinate -= 10;
-                return !isOccupied(OccupiedCoordinate.ToString());
+                occupiedCoordinate -= 10;
+                return !IsOccupied(occupiedCoordinate.ToString());
             }
             else if (start - 10 == finish) // Egyett lép előre
             {
-                OccupiedCoordinate = start - 10;
-                return !isOccupied(OccupiedCoordinate.ToString());
+                occupiedCoordinate = start - 10;
+                return !IsOccupied(occupiedCoordinate.ToString());
             }
             else if (start - finish == 9) // Balra támad
             {
-                OccupiedCoordinate = start - 9;
-                return isEnemy(OccupiedCoordinate.ToString(), "W");
+                occupiedCoordinate = start - 9;
+                return IsEnemy(occupiedCoordinate.ToString(), "W");
             }
             else if (start - finish == 11) // Jobbra támad
             {
-                OccupiedCoordinate = start - 11;
-                return isEnemy(OccupiedCoordinate.ToString(), "W");
+                occupiedCoordinate = start - 11;
+                return IsEnemy(occupiedCoordinate.ToString(), "W");
             }
             else
             {

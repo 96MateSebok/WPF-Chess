@@ -13,11 +13,11 @@ namespace ModernUI.PiecesMoves
                 finishY = 0,
                 finishX = finish,
                 fakeStart1 = start,
-                FakeStart2 = start,
-                FakeStart3 = start,
-                FakeStart4 = start;
-            int OccupiedCoordinate;
-            bool CanStep = false;
+                fakeStart2 = start,
+                fakeStart3 = start,
+                fakeStart4 = start;
+            int occupiedCoordinate;
+            bool canStep = false;
 
             if (start > 9)
             {
@@ -31,29 +31,29 @@ namespace ModernUI.PiecesMoves
                 finishX = finish % 10;
             }
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 7; i++) // A lépés lehetséges e
             {
                 fakeStart1 += 11;
-                FakeStart2 -= 11;
-                FakeStart3 += 9;
-                FakeStart4 -= 9;
+                fakeStart2 -= 11;
+                fakeStart3 += 9;
+                fakeStart4 -= 9;
                 if (fakeStart1 == finish ||
-                   FakeStart2 == finish ||
-                   FakeStart3 == finish ||
-                   FakeStart4 == finish)
+                   fakeStart2 == finish ||
+                   fakeStart3 == finish ||
+                   fakeStart4 == finish)
                 {
-                    CanStep = true;
+                    canStep = true;
                     break;
                 }
             }
 
-            if ((startX < finishX) && CanStep)
+            if ((startX < finishX) && canStep)
             {
                 if (startY < finishY) // Jobbra fel
                 {
-                    for (OccupiedCoordinate = start + 11; OccupiedCoordinate < finish; OccupiedCoordinate += 11)
+                    for (occupiedCoordinate = start + 11; occupiedCoordinate < finish; occupiedCoordinate += 11)
                     {
-                        if (IsOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(occupiedCoordinate.ToString()))
                         {
                             return false;
                         }
@@ -62,9 +62,9 @@ namespace ModernUI.PiecesMoves
                 }
                 else // Jobbra le
                 {
-                    for (OccupiedCoordinate = start - 9; OccupiedCoordinate > finish; OccupiedCoordinate -= 9)
+                    for (occupiedCoordinate = start - 9; occupiedCoordinate > finish; occupiedCoordinate -= 9)
                     {
-                        if (IsOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(occupiedCoordinate.ToString()))
                         {
                             return false;
                         }
@@ -72,13 +72,13 @@ namespace ModernUI.PiecesMoves
                     return !IsOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), color);
                 }
             }
-            else if (CanStep)
+            else if (canStep)
             {
                 if (startY < finishY) //Balra fel
                 {
-                    for (OccupiedCoordinate = start + 9; OccupiedCoordinate < finish; OccupiedCoordinate += 9)
+                    for (occupiedCoordinate = start + 9; occupiedCoordinate < finish; occupiedCoordinate += 9)
                     {
-                        if (IsOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(occupiedCoordinate.ToString()))
                         {
                             return false;
                         }
@@ -87,9 +87,9 @@ namespace ModernUI.PiecesMoves
                 }
                 else //Balra le
                 {
-                    for (OccupiedCoordinate = start - 11; OccupiedCoordinate > finish; OccupiedCoordinate -= 11)
+                    for (occupiedCoordinate = start - 11; occupiedCoordinate > finish; occupiedCoordinate -= 11)
                     {
-                        if (IsOccupied(OccupiedCoordinate.ToString()))
+                        if (IsOccupied(occupiedCoordinate.ToString()))
                         {
                             return false;
                         }

@@ -4,17 +4,17 @@ namespace ModernUI.PiecesMoves
 {
     class Horse
     {
-        public static bool CanHorseStep(String Color, int Start, int Finish,
-            Func<String, bool> isOccupied, Func<String, String, bool> isEnemy)
+        public static bool CanHorseStep(String Color, int start, int finish,
+            Func<string, bool> isOccupied, Func<string, string, bool> IsEnemy)
         {
             Color = Color.Remove(1, 5);
 
-            if (Start - 21 == Finish || Start + 21 == Finish ||
-               Start - 19 == Finish || Start + 19 == Finish ||
-               Start - 12 == Finish || Start + 12 == Finish ||
-               Start - 8 == Finish || Start + 8 == Finish)
+            if (start - 21 == finish || start + 21 == finish ||
+               start - 19 == finish || start + 19 == finish ||
+               start - 12 == finish || start + 12 == finish ||
+               start - 8 == finish || start + 8 == finish)
             {
-                return !isOccupied(Finish.ToString()) || !isEnemy(Finish.ToString(), Color);
+                return !isOccupied(finish.ToString()) || !IsEnemy(finish.ToString(), Color);
             }
             else
             {
